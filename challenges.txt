@@ -1,0 +1,3 @@
+bronze: Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[__NSArrayM objectAtIndex:]: index 11 beyond bounds [0 .. 9]'
+
+silver: 

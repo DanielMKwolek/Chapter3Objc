@@ -7,11 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Item.h"
+#import "Container.h"
 
-int main(int argc, const char * argv[]) {
+
+int main (int argc, const char * argv[])
+{
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        
+        Item *backpack = [[Item alloc] initWithName:@"Backpack"];
+        [items addObject:backpack];
+        Item *calculator = [[Item alloc] initWithName:@"Calculator"];
+        [items addObject:calculator];
+        backpack.containedItem = calculator;
+        
+        
+        for (Item *item in items)
+            NSLog(@"%@", item);
+        
+        
+        
+        NSLog(@"Setting Items to Nil");
+        backpack = nil;
+        calculator = nil;
+        
+        items = nil;
     }
-    return 0;
-}
+    return 0; }
